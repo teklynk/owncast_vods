@@ -14,5 +14,5 @@ block main_container
                         each video in videos
                             .col-md-4.mb-4
                                 .position-relative
-                                    a(href=`/video?vod=${video}`, target="_self")
+                                    a(href=`./video?vod=${video}`, target="_self")
                                         img.img-thumbnail(src=`./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video}`)
