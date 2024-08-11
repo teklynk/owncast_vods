@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'bootstrap';
+@import 'topnav';
+@import 'footer';
+
+body {
+    font-family: $base-font1;
+    height: auto !important;
+    background-color: $base-color1;
+}
+
+.hide {
+    display: none;
+}
+
+.base-color2-bg {
+    background-color: $base-color2;
+}
+
+.base-color1-text {
+    color: $base-color1;
+}
+
+img.img-rounded {
+    border-radius: 100%;
+}
+
+main {
+    a, p, li, h1, h2, h3 {
+        font-family: $base-font1;
+    }
+    p, a, li {
+        font-size: inherit;
+    }
+    a {
+        text-decoration: none;
+        color: $base-color-alt1;
+        &:hover, &:focus, &:active {
+            text-decoration: underline;
+            color: $base-color-alt2;
+        }
+    }
+    h1 {
+        margin-bottom: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    h2, h3 {
+        margin-top: 1.5rem;
+    }
+}
+
+.home {
+    min-height: 600px;
+    background: $base-color2;
+    color: #eee;
+}
+
+iframe {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    &.staff-form {
+        width: 100%;
+        height: 3500px;
+        border: none;
+        overflow: hidden;
+    }
+    &.general-inquiry-form {
+        width: 100%;
+        height: 1000px;
+        border: none;
+        overflow: hidden;
+    }
+}
+
+.social-media-icons, .footer-links {
+    ul {
+        margin: 0;
+    }
+    li {
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+    }
+    i {
+        color: #eee;
+    }
+}
+
+img.discord-logo {
+    max-width: 250px;
+}

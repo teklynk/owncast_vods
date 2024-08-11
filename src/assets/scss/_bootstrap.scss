@@ -1,0 +1,15 @@
+// Bootstrap
+@import '~/bootstrap/scss/_functions';
+@import '~/bootstrap/scss/_variables';
+@import '~/bootstrap/scss/_mixins';
+// Custom theme colors must be included here if required
+@import '~/bootstrap/scss/bootstrap';
+
+// Fontawesome
+$fa-font-path: '~/@fortawesome/fontawesome-free/webfonts';
+@import '~/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~/@fortawesome/fontawesome-free/scss/brands.scss';
+
+// Google font for Basic
+@import url('https://fonts.googleapis.com/css2?family=Basic');

@@ -1,0 +1,22 @@
+doctype html
+html(lang=lang)
+    head
+        meta(charset='UTF-8')
+        link(rel='icon', href='/assets/icons/favicon.ico')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        title
+            block title
+                | VODs
+    body
+        block nav
+            - var page = "home"
+        block header
+            include ../includes/header.pug
+        main#main(role="main")
+            block main_container
+                .container
+                    block content
+        block footer
+            include ../includes/footer.pug
+        block script
+            script(type='module', src='src/main.js')

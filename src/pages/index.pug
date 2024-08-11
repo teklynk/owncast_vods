@@ -1,0 +1,24 @@
+extends ../layout/default.pug
+
+block title
+    | VODs
+
+block main_container
+    .home
+        .container
+            block content
+                .container.pb-5.pt-5.text-center
+                    h1.text-center VODs
+
+                    .row
+                        each video in videos
+                            .col-md-4.mb-4
+                                .position-relative
+                                    .ratio.ratio-16x9
+                                        video.w-100(
+                                            muted
+                                            controls
+                                            poster=`/thumbnails/${video.split('.mp4')[0]}_thumbnail.png`
+                                            src=`/videos/${video}`
+                                            type="video/mp4"
+                                        )
