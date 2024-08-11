@@ -1,0 +1,41 @@
+extends ../layout/default.pug
+
+block title
+    | VODs
+
+block main_container
+    .home
+        .container-fluid
+            block content
+                .pb-5.pt-5.text-center
+                    .text-left
+                        a(href=`/vod`, target="_self")
+                            button.btn.btn-primary Back
+                    .row
+                        h1#vod-title
+                        .ratio.ratio-16x9
+                            video#vod-video.w-100(
+                                muted
+                                controls
+                            )
+
+    script.
+        // JavaScript to get the 'vod' parameter from the URL and set the video source and poster
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const video = urlParams.get('vod');
+
+            if (video) {
+                const videoElement = document.getElementById('vod-video');
+                const videoTitleElement = document.getElementById('vod-title');
+
+                // Set the title of the video
+                videoTitleElement.textContent = `${video.split('.mp4')[0]}`;  // Set the title without the .mp4 extension
+
+                // Set the video source and poster
+                videoElement.src = `./videos/${video}`;
+                videoElement.poster = `./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`;
+            } else {
+                console.error('No "vod" parameter found in the URL.');
+            }
+        });

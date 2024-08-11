@@ -14,11 +14,5 @@ block main_container
                         each video in videos
                             .col-md-4.mb-4
                                 .position-relative
-                                    .ratio.ratio-16x9
-                                        video.w-100(
-                                            muted
-                                            controls
-                                            poster=`./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`
-                                            src=`./videos/${video}`
-                                            type="video/mp4"
-                                        )
+                                    a(href=`/video?vod=${video}`, target="_self")
+                                        img.img-thumbnail(src=`./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video}`)
