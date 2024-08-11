@@ -24,7 +24,7 @@ export default defineConfig({
             //    baseDir: resolve(__dirname, 'src/language')
             //},
             locals: {
-                videos: fs.readdirSync(resolve(__dirname, 'public/videos')).filter(file => file.endsWith('.mp4'))
+                videos: fs.readdirSync(resolve(__dirname, 'public/videos')).filter(file => file.endsWith('.mp4')).sort((a, b) => a.localeCompare(b)).reverse()
             },
             options: {},
         }),

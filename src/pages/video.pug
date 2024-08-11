@@ -17,6 +17,8 @@ block main_container
                             video#vod-video.w-100(
                                 muted
                                 controls
+                                playsinline
+                                preload="metadata"
                             )
 
     script.
@@ -30,11 +32,11 @@ block main_container
                 const videoTitleElement = document.getElementById('vod-title');
 
                 // Set the title of the video
-                videoTitleElement.textContent = `${video.split('.mp4')[0]}`;  // Set the title without the .mp4 extension
+                videoTitleElement.textContent = `${video}`;  // Set the title without the .mp4 extension
 
                 // Set the video source and poster
-                videoElement.src = `./videos/${video}`;
-                videoElement.poster = `./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`;
+                videoElement.src = `./videos/${video}.mp4`;
+                videoElement.poster = `./thumbnails/${video}_thumbnail.png`;
             } else {
                 console.error('No "vod" parameter found in the URL.');
             }
