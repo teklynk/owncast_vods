@@ -31,13 +31,39 @@ block main_container
                 const videoElement = document.getElementById('vod-video');
                 const videoTitleElement = document.getElementById('vod-title');
 
-                // Set the title of the video
-                videoTitleElement.textContent = `${video}`;  // Set the title without the .mp4 extension
+                // Parse the date and time from the video parameter
+                const videoParts = video.split('_');
+                if (videoParts.length === 3) {
+                    const datePart = videoParts[1];
+                    const timePart = videoParts[2];
+
+                    // Extract the year, month, day, hours, minutes, and seconds
+                    const year = datePart.substring(0, 4);
+                    const month = datePart.substring(4, 6);
+                    const day = datePart.substring(6, 8);
+
+                    let hours = parseInt(timePart.substring(0, 2));
+                    const minutes = timePart.substring(2, 4);
+                    const seconds = timePart.substring(4, 6);
+
+                    // Determine AM/PM
+                    const ampm = hours >= 12 ? 'PM' : 'AM';
+                    hours = hours % 12;
+                    hours = hours ? hours : 12; // The hour '0' should be '12'
+
+                    // Format the date and time into the desired format: MM/DD/YYYY, hh:mm:ss AM/PM
+                    const formattedDateTime = `${parseInt(month)}/${parseInt(day)}/${year}, ${hours}:${minutes}:${seconds} ${ampm}`;
+
+                    // Set the title of the video
+                    videoTitleElement.textContent = `Recorded on: ${formattedDateTime}`;
+                } else {
+                    videoTitleElement.textContent = `${video}`;  // Fallback if the filename format is unexpected
+                }
 
                 // Set the video source and poster
                 videoElement.src = `./videos/${video}.mp4`;
                 videoElement.poster = `./thumbnails/${video}_thumbnail.png`;
             } else {
-                console.error('No "vod" parameter found in the URL.');
+                console.error('No "v" parameter found in the URL.');
             }
         });

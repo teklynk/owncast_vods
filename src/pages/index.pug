@@ -14,6 +14,6 @@ block main_container
                         each video in videos
                             .col-md-4.mb-4
                                 .position-relative
-                                    a(href=`./watch.html?v=${video.split('.mp4')[0]}`, target="_self")
-                                        img.img-thumbnail(src=`./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video}`)
-                                    p.mt-2= video.split('.mp4')[0]
+                                    a(href=`./watch.html?v=${video.filename.split('.mp4')[0]}`, target="_self")
+                                        img.img-thumbnail(src=`./thumbnails/${video.filename.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video.filename}`)
+                                    p= `Recorded on: ${video.formattedDate}`
