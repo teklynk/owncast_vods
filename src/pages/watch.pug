@@ -7,19 +7,20 @@ block main_container
     .home
         .container-fluid
             block content
-                .pb-5.pt-5.text-center
-                    .text-left
-                        a(href=`./index.html`, target="_self")
-                            button.btn.btn-primary Back
-                    .row
-                        h1#vod-title
-                        .ratio.ratio-16x9
-                            video#vod-video.w-100(
-                                muted
-                                controls
-                                playsinline
-                                preload="metadata"
-                            )
+                .container
+                    .pb-5.pt-5.text-center
+                        .text-left
+                            a(href=`./index.html`, target="_self")
+                                button.btn.btn-primary Back
+                        .row
+                            h1#vod-title
+                            .ratio.ratio-16x9
+                                video#vod-video.w-100(
+                                    muted
+                                    controls
+                                    playsinline
+                                    preload="metadata"
+                                )
 
     script.
         // JavaScript to get the 'vod' parameter from the URL and set the video source and poster

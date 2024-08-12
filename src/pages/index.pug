@@ -7,13 +7,14 @@ block main_container
     .home
         .container-fluid
             block content
-                .pb-5.pt-5.text-center
-                    h1.text-center VODs
+                .container
+                    .pb-5.pt-5.text-center
+                        h1.text-center VODs
 
-                    .row
-                        each video in videos
-                            .col-md-4.mb-4
-                                .position-relative
-                                    a(href=`./watch.html?v=${video.filename.split('.mp4')[0]}`, target="_self")
-                                        img.img-thumbnail(src=`./thumbnails/${video.filename.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video.filename}`)
-                                    p= `Recorded on: ${video.formattedDate}`
+                        .row
+                            each video in videos
+                                .col-md-4.mb-4
+                                    .position-relative
+                                        a(href=`./watch.html?v=${video.filename.split('.mp4')[0]}`, target="_self")
+                                            img.img-thumbnail(src=`./thumbnails/${video.filename.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video.filename}`)
+                                        p= `Recorded on: ${video.formattedDate}`
