@@ -16,3 +16,4 @@ block main_container
                                 .position-relative
                                     a(href=`./watch.html?v=${video.split('.mp4')[0]}`, target="_self")
                                         img.img-thumbnail(src=`./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video}`)
+                                    p.mt-2= video.split('.mp4')[0]
