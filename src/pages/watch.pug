@@ -25,7 +25,7 @@ block main_container
         // JavaScript to get the 'vod' parameter from the URL and set the video source and poster
         document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);
-            const video = urlParams.get('vod');
+            const video = urlParams.get('v');
 
             if (video) {
                 const videoElement = document.getElementById('vod-video');
