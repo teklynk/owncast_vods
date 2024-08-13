@@ -1,12 +1,11 @@
 @import 'variables';
 @import 'bootstrap';
-@import 'topnav';
-@import 'footer';
 
 body {
+    background: $base-color2;
+    color: #eee;
     font-family: $base-font1;
     height: auto !important;
-    background-color: $base-color1;
 }
 
 .hide {
@@ -51,9 +50,4 @@ main {
     h2, h3 {
         margin-top: 1.5rem;
     }
-}
-
-.home {
-    background: $base-color2;
-    color: #eee;
 }
