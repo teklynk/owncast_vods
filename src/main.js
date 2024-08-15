@@ -24,4 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('No "vod" parameter found in the URL.');
         videoPlayer.classList.add('d-none');
     }
+    // sets active thumbnail image
+    const params = new URLSearchParams(window.location.search);
+    const videoParam = params.get('v');
+    if (videoParam) {
+        const activeThumbnail = document.querySelector(`img[data-id="${videoParam}"]`);
+        if (activeThumbnail) {
+            activeThumbnail.classList.add('active');
+        }
+    }
 });

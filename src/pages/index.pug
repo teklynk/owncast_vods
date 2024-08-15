@@ -2,24 +2,22 @@ extends ../layout/default.pug
 
 block content
     .container
-        .pb-5.pt-5.text-center
-            .row#vod-player
-                h1#vod-title
-                .ratio.ratio-16x9
-                    video#vod-video.w-100(
-                        muted
-                        controls
-                        playsinline
-                        preload="metadata"
-                    )
-            .row.mt-5
-                each video in videos
-                    .col-lg-2.col-md-4.col-sm-6.mb-2
-                        .position-relative
-                            a(href=`./index.html?v=${video.split('.mp4')[0]}`, target="_self")
-                                img.img-thumbnail(src=`./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video}`)
-                            p.mt-2= video.split('.mp4')[0]
+        .row#vod-player.text-center
+            h1#vod-title
+            .ratio.ratio-16x9
+                video#vod-video.w-100.h-auto.shadow(
+                    muted
+                    controls
+                    playsinline
+                    preload="metadata"
+                )
+        .row.mt-5.text-center 
+            each video in videos
+                .col-lg-2.col-md-4.col-sm-6
+                    a(href=`./index.html?v=${video.split('.mp4')[0]}`, target="_self")
+                        img.img-thumbnail.shadow.w-100.h-auto(src=`./thumbnails/${video.split('.mp4')[0]}_thumbnail.png`, alt=`Thumbnail for ${video.split('.mp4')[0]}`, data-id=`${video.split('.mp4')[0]}`)
+                    p.mt-2= video.split('.mp4')[0]
 
-            .row.mt-2 
-                p
-                    a(href='./index.html', target='_blank') Open in a new window
+        .row.mt-5.text-center 
+            p
+                a(href='./index.html', target='_blank') Open in a new window

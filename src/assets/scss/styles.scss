@@ -28,6 +28,16 @@ img.img-rounded {
     text-align: left;
 }
 
+img.img-thumbnail {
+    border-radius: 0;
+    border: 1px solid $purple;
+    background-color: transparent;
+}
+
+img.img-thumbnail.active {
+    border: 1px solid $base-color-alt2;
+}
+
 main {
     a, p, li, h1, h2, h3 {
         font-family: $base-font1;
