@@ -18,7 +18,7 @@ function generateThumbnails() {
                 timestamps: ['10'],
                 filename: `${video.split('.mp4')[0]}_thumbnail.png`,
                 folder: thumbnailDir,
-                size: '480x270'
+                size: '1280x720'
             })
             .on('end', () => {
                 console.log(`Generated thumbnail for ${video}`);
