@@ -5,7 +5,7 @@ import vitePluginGenerateThumbnails from './vite-plugin-generate-thumbnails';
 import fs from 'node:fs';
 
 export default defineConfig({
-    base: '',
+    base: './',
     resolve: {
         alias: {
             '~': resolve(__dirname, './node_modules')
@@ -33,8 +33,8 @@ export default defineConfig({
     build: {
         rollupOptions: {
             output: {
-                assetFileNames: './assets/main-[hash][extname]',
-                entryFileNames: './assets/main-[hash].js'
+                assetFileNames: 'assets/main-[hash][extname]',
+                entryFileNames: 'assets/main-[hash].js'
             }
         }
     }
