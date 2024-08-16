@@ -1,12 +1,16 @@
-import fs from 'fs-extra';
 import { resolve } from 'path';
 import ffmpeg from 'fluent-ffmpeg';
+import fs from 'node:fs';
 
 function generateThumbnails() {
     const videoDir = resolve('public/videos');
     const thumbnailDir = resolve('public/thumbnails');
     const videos = fs.readdirSync(videoDir).filter(file => file.endsWith('.mp4'));
-    fs.ensureDirSync(thumbnailDir);
+
+    if (!fs.existsSync(thumbnailDir)) {
+        console.error(`${thumbnailDir}: Does not exist`, err);
+        return
+    }
 
     videos.forEach(video => {
         const videoPath = resolve(videoDir, video);

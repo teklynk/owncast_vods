@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import vitePluginPugI18n from 'vite-plugin-pug-i18n';
 import vitePluginGenerateThumbnails from './vite-plugin-generate-thumbnails';
-import fs from 'fs-extra';
+import fs from 'node:fs';
 
 export default defineConfig({
     base: '',
@@ -33,7 +33,8 @@ export default defineConfig({
     build: {
         rollupOptions: {
             output: {
-                chunkFileNames: 'assets/main-[hash].js'
+                assetFileNames: 'assets/main-[hash][extname]',
+                entryFileNames: 'assets/main-[hash].js'
             }
         }
     }
