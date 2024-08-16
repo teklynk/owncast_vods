@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (video) {
         const videoElement = document.getElementById('vod-video');
         const videoTitleElement = document.getElementById('vod-title');
+        const activeThumbnail = document.querySelector(`img[data-id="${video}"]`);
 
         // Set the title of the video
         videoTitleElement.textContent = `${video}`;  // Set the title without the .mp4 extension
@@ -20,17 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
         videoElement.src = `./videos/${video}.mp4`;
         videoElement.poster = `./thumbnails/${video}_thumbnail.png`;
         videoPlayer.classList.add('d-block');
-    } else {
-        console.error('No "vod" parameter found in the URL.');
-        videoPlayer.classList.add('d-none');
-    }
-    // sets active thumbnail image
-    const params = new URLSearchParams(window.location.search);
-    const videoParam = params.get('v');
-    if (videoParam) {
-        const activeThumbnail = document.querySelector(`img[data-id="${videoParam}"]`);
+
         if (activeThumbnail) {
             activeThumbnail.classList.add('active');
         }
+    } else {
+        console.error('No "vod" parameter found in the URL.');
+        videoPlayer.classList.add('d-none');
     }
 });
