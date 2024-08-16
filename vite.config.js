@@ -33,8 +33,8 @@ export default defineConfig({
     build: {
         rollupOptions: {
             output: {
-                assetFileNames: 'assets/main-[hash][extname]',
-                entryFileNames: 'assets/main-[hash].js'
+                assetFileNames: './assets/main-[hash][extname]',
+                entryFileNames: './assets/main-[hash].js'
             }
         }
     }
