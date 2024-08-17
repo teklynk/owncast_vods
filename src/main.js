@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Set the video source and poster
         videoElement.src = `./videos/${video}.mp4`;
         videoElement.poster = `./thumbnails/${video}_thumbnail.png`;
-        videoPlayer.classList.add('d-block');
-        vodLink.classList.add('d-block');
+        videoPlayer.classList.remove('d-none');
+        vodLink.classList.remove('d-none');
         vodLink.href = `./videos/${video}.mp4`;
         vodLink.download = `${video}.mp4`;
 
