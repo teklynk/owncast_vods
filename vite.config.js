@@ -5,7 +5,7 @@ import vitePluginGenerateThumbnails from './vite-plugin-generate-thumbnails';
 import fs from 'node:fs';
 
 export default defineConfig({
-    base: './',
+    base: './', // running the website inside a sub directory
     resolve: {
         alias: {
             '~': resolve(__dirname, './node_modules')

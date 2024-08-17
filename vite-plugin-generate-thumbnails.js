@@ -17,7 +17,7 @@ function generateThumbnails() {
 
         ffmpeg(videoPath)
             .screenshots({
-                timestamps: ['30'],
+                timestamps: ['600'], // 10 minutes
                 filename: `${video.split('.mp4')[0]}_thumbnail.png`,
                 folder: thumbnailDir,
                 size: '1280x720'
